@@ -36,7 +36,7 @@ if __name__ == "__main__":
     print("Flash status", status)
 
     print("\nConnecting using CCP...")
-    client = CcpClient(p, 1746, 1747, byte_order=BYTE_ORDER.LITTLE_ENDIAN)
+    client = CcpClient(p, 1746, 1747, byte_order=BYTE_ORDER.LITTLE_ENDIAN, bus=1)
     client.connect(0x0)
 
     progress = tqdm.tqdm(total=args.end_address - args.start_address)
